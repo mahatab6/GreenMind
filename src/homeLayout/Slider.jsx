@@ -9,7 +9,7 @@ import bg1 from '../assets/plantbg.jpg'
 import hero1 from '../assets/hero1.jpg'
 import bg2 from '../assets/plantbg1.jpg'
 import hero2 from '../assets/hero2.jpg'
-import bg3 from '../assets/plantbg1.jpg'
+import bg3 from '../assets/plantbg2.jpg'
 
 
 const Slider = () => {
