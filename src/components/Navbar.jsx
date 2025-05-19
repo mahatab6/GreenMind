@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, NavLink } from 'react-router';
+import { Link, NavLink, useNavigate } from 'react-router';
 import green from '../assets/GreenMind.png'
 import ThemeToggle from './ThemeToggle';
 import { AuthContext } from '../context/AuthContext';
@@ -23,8 +23,20 @@ const Navbar = () => {
             </>
         )
 
-        const {activeUser} = useContext(AuthContext)
-        console.log(activeUser)
+        const {activeUser, logOut} = useContext(AuthContext)
+        const navigate = useNavigate();
+        
+        const handlelogOut = () =>{
+            logOut()
+            .then(result => {
+                    console.log(result);
+                    navigate('/');
+                })
+            .catch(error => {
+                    console.log(error);
+                });
+        }
+
     return (
         <div className='w-11/12 mx-auto '>
             <div className="navbar ">
@@ -35,7 +47,7 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content rounded-box z-1 bg-white mt-3 w-52 p-2 shadow">
                         {link}
                     </ul>
                     </div>
@@ -53,7 +65,7 @@ const Navbar = () => {
                 <div className="navbar-end gap-2">
                     <ThemeToggle/>
                     {
-                        activeUser? <Link to="/login" className='btn'>Log Out</Link>:<Link to="/login" className='btn'>Log In</Link>
+                        activeUser? <Link onClick={()=>{handlelogOut()}} className='btn'>LogOut</Link>:<Link to="/login" className='btn'>LogIn</Link>
                     }
                 </div>
             </div>
