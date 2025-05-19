@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router';
 import green from '../assets/GreenMind.png'
 import ThemeToggle from './ThemeToggle';
+import { AuthContext } from '../context/AuthContext';
 
 const Navbar = () => {
       const link = (
@@ -21,6 +22,9 @@ const Navbar = () => {
             </li>
             </>
         )
+
+        const {activeUser} = useContext(AuthContext)
+        console.log(activeUser)
     return (
         <div className='w-11/12 mx-auto '>
             <div className="navbar ">
@@ -48,9 +52,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-2">
                     <ThemeToggle/>
-                    <Link to="/login" className='btn'>Login</Link>
-                    <Link to="/register" className='btn'>Register</Link>
-                    
+                    {
+                        activeUser? <Link to="/login" className='btn'>Log Out</Link>:<Link to="/login" className='btn'>Log In</Link>
+                    }
                 </div>
             </div>
         </div>
