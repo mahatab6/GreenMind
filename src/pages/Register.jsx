@@ -9,7 +9,7 @@ import { AuthContext } from '../context/AuthContext';
 const Register = () => {
 
     const [showPassword, setShowPassword] = useState(false);
-    const {register} = useContext(AuthContext);
+    const {register,profile} = useContext(AuthContext);
      const navigate = useNavigate();
 
     const handleform =(e)=> {
@@ -26,10 +26,14 @@ const Register = () => {
         }
 
         register(email,password)  
-            .then(result => {
-                    console.log(result);
-                    navigate('/');
+             .then(() => {
+                profile({displayName:name, photoURL: photoURL})
+                .then( () => {
+                    
                 })
+
+                navigate('/');
+            })
             .catch(error => {
                     console.log(error);
                 });

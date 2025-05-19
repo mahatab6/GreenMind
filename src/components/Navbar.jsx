@@ -65,6 +65,19 @@ const Navbar = () => {
                 <div className="navbar-end gap-2">
                     <ThemeToggle/>
                     {
+                        activeUser && activeUser.displayName ? (
+                            <Link to="/profile">
+                            <img
+                                className="w-10 h-10 rounded-full border-2 border-green-500 "
+                                src={activeUser.photoURL || "/default-avatar.png"}
+                                alt=""
+                                title={activeUser.displayName}
+                            />
+                            </Link>
+                        ) : ''
+                    }
+
+                    {
                         activeUser? <Link onClick={()=>{handlelogOut()}} className='btn'>LogOut</Link>:<Link to="/login" className='btn'>LogIn</Link>
                     }
                 </div>
