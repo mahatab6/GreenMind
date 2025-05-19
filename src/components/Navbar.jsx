@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router';
 import green from '../assets/GreenMind.png'
+import ThemeToggle from './ThemeToggle';
 
 const Navbar = () => {
       const link = (
@@ -45,7 +46,8 @@ const Navbar = () => {
                     {link}
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end gap-2">
+                    <ThemeToggle/>
                     <a className="btn">Login</a>
                     <a className="btn">Register</a>
                 </div>
