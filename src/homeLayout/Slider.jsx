@@ -55,7 +55,7 @@ const Slider = () => {
                     <SwiperSlide>
                            <div className="relative">
                                     <div
-                                        className="absolute inset-0 rounded-b-xl mb-5"style={{background: `url(${bg2})`, backgroundSize: 'cover',backgroundPosition: 'center',filter: 'brightness(60%)',zIndex: 0,}}
+                                        className="absolute inset-0 rounded-b-xl mb-5"style={{background: `url(${bg3})`, backgroundSize: 'cover',backgroundPosition: 'center',filter: 'brightness(60%)',zIndex: 0,}}
                                     ></div>
                                     <div className="relative z-10 flex flex-col-reverse md:flex-row py-20 items-center px-8">
                                         <div className="text-white md:px-10">
@@ -76,7 +76,7 @@ const Slider = () => {
                     <SwiperSlide>
                             <div className="relative">
                                         <div
-                                            className="absolute inset-0 rounded-b-xl mb-5"style={{background: `url(${bg3})`, backgroundSize: 'cover',backgroundPosition: 'center',filter: 'brightness(60%)',zIndex: 0,}}
+                                            className="absolute inset-0 rounded-b-xl mb-5"style={{background: `url(${bg2})`, backgroundSize: 'cover',backgroundPosition: 'center',filter: 'brightness(60%)',zIndex: 0,}}
                                         ></div>
                                         <div className="relative z-10 flex flex-col-reverse md:flex-row py-20 items-center px-8">
                                             <div className="text-white md:px-10">

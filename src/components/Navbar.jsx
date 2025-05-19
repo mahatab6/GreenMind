@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import green from '../assets/GreenMind.png'
 import ThemeToggle from './ThemeToggle';
 
@@ -7,13 +7,13 @@ const Navbar = () => {
       const link = (
             <>
             <li>
-                <NavLink className={({isActive}) => isActive ? "border-b-2": '' }>Home</NavLink>
+                <NavLink to="/" className={({isActive}) => isActive ? "border-b-2": '' }>Home</NavLink>
             </li>
             <li> 
                 <NavLink className={({isActive}) => isActive ? "border-b-2": '' }>All Plants</NavLink>
             </li>
             <li>
-                <NavLink className={({isActive}) => isActive ? "border-b-2": '' }>Add Plant</NavLink>
+                <NavLink to="/add-plant" className={({isActive}) => isActive ? "border-b-2": '' }>Add Plant</NavLink>
                 
             </li>
             <li>
@@ -36,7 +36,7 @@ const Navbar = () => {
                     </ul>
                     </div>
                     <div className='flex items-center'>
-                        <img className='w-[50px]' src={green} alt="" />
+                        <img className='w-[50px] ' src={green} alt="" />
                         <a className=" text-xl">GreenMind</a>
                     </div>
                     
@@ -48,8 +48,9 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-2">
                     <ThemeToggle/>
-                    <a className="btn">Login</a>
-                    <a className="btn">Register</a>
+                    <Link to="/login" className='btn'>Login</Link>
+                    <Link to="/register" className='btn'>Register</Link>
+                    
                 </div>
             </div>
         </div>
