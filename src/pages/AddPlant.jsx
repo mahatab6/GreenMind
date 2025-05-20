@@ -158,7 +158,7 @@ const AddPlant = () => {
                         </fieldset>
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">User Name {activeUser?<span className='text-xs gap-2'>Don't change your user name</span> : ''}</label>
-                            <input readOnly type="text" name="username"  placeholder="Enter your name" defaultValue={activeUser?.displayName || ''} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input readOnly type="text" name="username"  placeholder="Enter your name" Value={activeUser?.displayName || ''} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
                     </div>
                     
