@@ -30,8 +30,21 @@ const AddPlant = () => {
         const email = from.email.value;
         const name = from.username.value;
         
+        const fromData = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
 
-        const hello = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
+        fetch('http://localhost:3000/add-plant',{
+             method: "POST",
+             headers: {
+                    "Content-Type": "application/json",
+                },
+             body: JSON.stringify(fromData),
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+
+        console.log(fromData)
 
       
 
@@ -50,7 +63,7 @@ const AddPlant = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">Plant Name</label>
-                            <input type="text" name="plantname"  placeholder="Enter your plant name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type="text" name="plantname"  placeholder="Enter your plant name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300" />
                         </fieldset>
 
                         <fieldset className="fieldset">
@@ -152,7 +165,7 @@ const AddPlant = () => {
                     </div>
                     
                     <div className='flex justify-center pt-5'>
-                        <button className='btn w-2/3 '>Submit</button>
+                        <button className='btn w-2/3 bg-green-500'>Submit</button>
                     </div>
 
                 </form>
