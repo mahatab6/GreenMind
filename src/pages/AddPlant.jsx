@@ -1,10 +1,43 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
+import { format } from 'date-fns';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
+
 
 
 const AddPlant = () => {
 
     const {activeUser} = useContext(AuthContext);
+
+    const [lastWatered, setLastWatered] = useState(null);
+    const [nextWatering, setNextWatering] = useState(null);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const from = e.target;
+        const plantName = from.plantname.value;
+        const image = from.image.value;
+        const category = from.category.value;
+        const scientificName = from.scientificname.value;
+        const description = from.description.value;
+        const careLevel = from.carelevel.value;
+        const wateringFrequency = from.wateringfrequency.value;
+        const LastWateredDate = lastWatered ? format(lastWatered, "yyyy-MM-dd") : "";
+        const NextWateringDate = nextWatering ? format(nextWatering, "yyyy-MM-dd") : "";
+        const healthStatus = from.healthStatus.value;
+        const email = from.email.value;
+        const name = from.username.value;
+        
+
+        const hello = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
+
+      
+
+    };
+
+
     return (
         <div className='w-11/12 mx-auto'>
             <div className='text-center space-y-2 pt-10'>
@@ -13,7 +46,7 @@ const AddPlant = () => {
             </div>
 
             <div className='py-10 '>
-                <form>
+                <form onSubmit={handleSubmit}>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">Plant Name</label>
@@ -69,11 +102,28 @@ const AddPlant = () => {
 
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">Last Watered Date</label>
-                            <input type="date" name="lastwater"  placeholder="Last plant watered date" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <DatePicker
+                            selected={lastWatered}
+                            onChange={(date) => setLastWatered(date)}
+                            placeholderText="Select last watered date"
+                            className="w-full px-3 py-2 border rounded-md dark:border-gray-300"
+                            dateFormat="yyyy-MM-dd"
+                            maxDate={new Date()} 
+                            isClearable
+                            />
                         </fieldset>
+
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">Next Watering Date</label>
-                            <input type="date" name="nextwater"  placeholder="Next plant watering date" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                              <DatePicker
+                                selected={nextWatering}
+                                onChange={(date) => setNextWatering(date)}
+                                placeholderText="Select next watering date"
+                                className="w-full px-3 py-2 border rounded-md dark:border-gray-300"
+                                dateFormat="yyyy-MM-dd"
+                                minDate={lastWatered || new Date()} 
+                                isClearable
+                                />
                         </fieldset>
 
                         <fieldset className="fieldset">
@@ -97,7 +147,7 @@ const AddPlant = () => {
                         </fieldset>
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">User Name {activeUser?<span className='text-xs gap-2'>Don't change your user name</span> : ''}</label>
-                            <input type="text" name="name"  placeholder="Enter your name" defaultValue={activeUser?.displayName || ''} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type="text" name="username"  placeholder="Enter your name" defaultValue={activeUser?.displayName || ''} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
                     </div>
                     
