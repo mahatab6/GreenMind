@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from './Slider';
 import NewPlant from './NewPlant';
+import ChooseUs from './ChooseUs';
 
 
 const Home = () => {
@@ -8,6 +9,7 @@ const Home = () => {
       <div className='w-11/12 mx-auto'>
          <Slider/>
          <NewPlant/>
+         <ChooseUs/>
       </div>
 
     );
