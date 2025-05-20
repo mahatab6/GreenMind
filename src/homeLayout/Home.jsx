@@ -3,6 +3,7 @@ import Slider from './Slider';
 import NewPlant from './NewPlant';
 import ChooseUs from './ChooseUs';
 import PlantVideo from './PlantVideo';
+import QuickStats from './QuickStats';
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
          <NewPlant/>
          <ChooseUs/>
          <PlantVideo/>
+         <QuickStats/>
       </div>
 
     );

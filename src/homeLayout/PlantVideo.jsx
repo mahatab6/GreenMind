@@ -18,7 +18,7 @@ const PlantVideo = () => {
         </div>
       </dialog>
 
-      <div className="w-full h-[200px] md:h-[500px] relative bg-cover bg-center"
+      <div className="w-full h-[200px] md:h-[500px] rounded-2xl relative bg-cover bg-center"
         style={{
           backgroundImage: `url(${plantvide})`,
           filter: 'brightness(60%)',
