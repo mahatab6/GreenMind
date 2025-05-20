@@ -5,6 +5,7 @@ import AddPlant from "../pages/AddPlant";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AllPlants from "../pages/AllPlants";
+import DetailsPage from "../pages/DetailsPage";
 
 
 export const router = createBrowserRouter([
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
         {
             path: "all-plants",
             element:<AllPlants/>
+        },
+        {
+            path: "plants-details/:id",
+            element:<DetailsPage/>
         }
     ]
   },
