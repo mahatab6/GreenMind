@@ -12,11 +12,9 @@ const AllPlants = () => {
         })
     },[])
 
-    console.log(allPlant);
-
     return (
-        <div className='w-11/12 mx-auto'>
-            <div className='text-center space-y-2 py-10'>
+        <div className='w-11/12 mx-auto py-10'>
+            <div className='text-center space-y-2 pb-10'>
                 <h1 className='text-xl md:text-3xl font-semibold'>All Your Plants in One Place</h1>
                 <p className='text-base font-normal'>Keep track of your green friends with ease! Below is a list of all your plants, <br /> showing essential care information at a glance. You can sort them by next watering <br /> date or care level to prioritize your plant care routine.</p>
             </div>
@@ -28,6 +26,7 @@ const AllPlants = () => {
                                 <thead className="dark:bg-gray-300">
                                     <tr className="text-center">
                                         <th className="p-3 ">No:</th>
+                                        <th className="p-3 ">Photo</th>
                                         <th className="p-3 ">Plant name</th>
                                         <th className="p-3 ">Category</th>
                                         <th className="p-3 ">Watering frequency</th>
@@ -40,10 +39,19 @@ const AllPlants = () => {
 
                                 {
                                     allPlant.map((plant,index)=>
-                                            <tbody>
-                                                <tr key={plant._id || index} className="border-b border-opacity-20 dark:border-gray-300 dark:bg-gray-50">
+                                            <tbody key={plant._id || index} >
+                                                <tr className="border-b border-opacity-20 dark:border-gray-300 dark:bg-gray-50">
                                                     <td className="p-3 justify-items-center">
                                                         <p>{index + 1 }</p>
+                                                    </td>
+                                                    <td className="p-3 ">
+                                                          <div className="avatar flex justify-center">
+                                                                <div className="mask mask-squircle h-12 w-12">
+                                                                    <img
+                                                                    src={plant.image}
+                                                                    alt="" />
+                                                                </div>
+                                                            </div>
                                                     </td>
                                                     <td className="p-3 justify-items-center">
                                                         <p>{plant.plantName}</p>
