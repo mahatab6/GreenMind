@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../context/AuthContext';
+
 
 const AddPlant = () => {
+
+    const {activeUser} = useContext(AuthContext);
     return (
         <div className='w-11/12 mx-auto'>
             <div className='text-center space-y-2 pt-10'>
@@ -12,12 +16,17 @@ const AddPlant = () => {
                 <form>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">Plant Name</label>
+                            <label className="block mb-2 text-xl">Plant Name</label>
                             <input type="text" name="plantname"  placeholder="Enter your plant name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" for="category" className="block mb-2 text-xl">Category</label>
+                            <label className="block mb-2 text-xl">Upload Image</label>
+                            <input type="text" name="image"  placeholder="Enter your plant image" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                        </fieldset>
+
+                        <fieldset className="fieldset">
+                            <label for="category" className="block mb-2 text-xl">Category</label>
                                 <select className="w-full px-3 py-2 border rounded-md dark:border-gray-300 "   name="category" id="category">
                                     <option value="">Choose your category</option>
                                     <option value="Succulent">Succulent</option>
@@ -34,12 +43,17 @@ const AddPlant = () => {
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">Description</label>
+                            <label className="block mb-2 text-xl">Scientific Name</label>
+                            <input type="text" name="scientificname"  placeholder="Your plant scientific name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                        </fieldset>
+
+                        <fieldset className="fieldset">
+                            <label className="block mb-2 text-xl">Description</label>
                             <input type="text" name="description"  placeholder="Write your plant description" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" for="carelevel " className="block mb-2 text-xl">Care Level </label>
+                            <label for="carelevel " className="block mb-2 text-xl">Care Level </label>
                                 <select className="w-full px-3 py-2 border rounded-md dark:border-gray-300 "   name="carelevel" id="carelevel">
                                     <option value="">Choose your plant care level</option>
                                     <option value="Easy">Easy</option>
@@ -49,21 +63,21 @@ const AddPlant = () => {
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">Watering Frequency</label>
+                            <label className="block mb-2 text-xl">Watering Frequency</label>
                             <input type="number" name="wateringfrequency" min="1" placeholder="Enter days" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">Last Watered Date</label>
+                            <label className="block mb-2 text-xl">Last Watered Date</label>
                             <input type="date" name="lastwater"  placeholder="Last plant watered date" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">Next Watering Date</label>
+                            <label className="block mb-2 text-xl">Next Watering Date</label>
                             <input type="date" name="nextwater"  placeholder="Next plant watering date" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" for="healthStatus" className="block mb-2 text-xl">Health Status</label>
+                            <label for="healthStatus" className="block mb-2 text-xl">Health Status</label>
                             <select className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " id="healthStatus" name="healthStatus" >
                                 <option value="">Select Health Status</option>
                                 <option value="healthy">Healthy</option>
@@ -78,12 +92,12 @@ const AddPlant = () => {
                         </fieldset>
 
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">User Email</label>
-                            <input type="email" name="email"  placeholder="Enter your email" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <label className="block mb-2 text-xl">User Email {activeUser?<span className='text-xs gap-2'>Don't change your email</span>:'' }</label>
+                            <input type="email" name="email"  placeholder="Enter your email" defaultValue={activeUser?.email || ''} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
                         <fieldset className="fieldset">
-                            <label htmlFor="email" className="block mb-2 text-xl">User Name</label>
-                            <input type="text" name="name"  placeholder="Enter your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <label className="block mb-2 text-xl">User Name {activeUser?<span className='text-xs gap-2'>Don't change your user name</span> : ''}</label>
+                            <input type="text" name="name"  placeholder="Enter your name" defaultValue={activeUser?.displayName || ''} className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
                     </div>
                     

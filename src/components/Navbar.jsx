@@ -74,7 +74,7 @@ const Navbar = () => {
                                 title={activeUser.displayName}
                             />
                             </Link>
-                        ) : ''
+                        ) : <span className="loading loading-ring loading-xs"></span>
                     }
 
                     {
