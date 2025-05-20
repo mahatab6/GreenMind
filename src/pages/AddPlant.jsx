@@ -44,9 +44,7 @@ const AddPlant = () => {
             console.log(data)
         })
 
-        console.log(fromData)
 
-      
 
     };
 
