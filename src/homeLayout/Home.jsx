@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from './Slider';
 import NewPlant from './NewPlant';
 import ChooseUs from './ChooseUs';
+import PlantVideo from './PlantVideo';
 
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
          <Slider/>
          <NewPlant/>
          <ChooseUs/>
+         <PlantVideo/>
       </div>
 
     );
