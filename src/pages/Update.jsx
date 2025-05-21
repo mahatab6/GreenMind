@@ -45,8 +45,17 @@ const Update = () => {
         
         const updateData = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
 
-        console.log(updateData)
-
+        fetch(`http://localhost:3000/all-plants/${id}`,{
+             method: "PUT",
+             headers: {
+                    "Content-Type": "application/json",
+                },
+             body: JSON.stringify(updateData),
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data)
+        })
     }
 
     return (
