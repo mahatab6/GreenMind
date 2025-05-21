@@ -7,6 +7,7 @@ import Register from "../pages/Register";
 import AllPlants from "../pages/AllPlants";
 import DetailsPage from "../pages/DetailsPage";
 import MyPlant from "../pages/MyPlant";
+import Update from "../pages/Update";
 
 
 export const router = createBrowserRouter([
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
         {
             path: "my-plants",
             element:<MyPlant/>
+        },
+        {
+            path: "update",
+            element:<Update/>
         }
     ]
   },

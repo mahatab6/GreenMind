@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
-import { Link } from 'react-router';
+import { Link, } from 'react-router';
 
 const MyPlant = () => {
     const {activeUser} = useContext(AuthContext);
@@ -55,7 +55,7 @@ const MyPlant = () => {
                     </div>
 
                     <div className="flex justify-between pt-4">
-                    <button className="btn w-1/3 bg-green-500 text-white rounded-md py-2">Update</button>
+                    <Link to="/update" className="btn w-1/3 bg-green-500 text-white rounded-md py-2">Update</Link>
                     <button className="btn w-1/3 bg-red-500 text-white rounded-md py-2">Delete</button>
                     </div>
                 </div>
