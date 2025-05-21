@@ -163,7 +163,7 @@ const AddPlant = () => {
                     </div>
                     
                     <div className='flex justify-center pt-5'>
-                        <button className='btn w-2/3 bg-green-500'>Submit</button>
+                        <button type='submit' className='btn w-2/3 bg-green-500'>Submit</button>
                     </div>
 
                 </form>

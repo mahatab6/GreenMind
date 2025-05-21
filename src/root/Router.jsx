@@ -44,7 +44,7 @@ export const router = createBrowserRouter([
             element:<MyPlant/>
         },
         {
-            path: "update",
+            path: "update/:id",
             element:<Update/>
         }
     ]

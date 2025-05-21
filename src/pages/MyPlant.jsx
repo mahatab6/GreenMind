@@ -20,7 +20,6 @@ const MyPlant = () => {
 
       const myPlantData = allPlant.filter((plant)=> plant.email === email);
 
-      console.log(myPlantData)
       
     return (
         <div className="w-11/12 mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center py-10">
@@ -55,7 +54,7 @@ const MyPlant = () => {
                     </div>
 
                     <div className="flex justify-between pt-4">
-                    <Link to="/update" className="btn w-1/3 bg-green-500 text-white rounded-md py-2">Update</Link>
+                    <Link to={`/update/${treePlant._id}`} className="btn w-1/3 bg-green-500 text-white rounded-md py-2">Update</Link>
                     <button className="btn w-1/3 bg-red-500 text-white rounded-md py-2">Delete</button>
                     </div>
                 </div>
