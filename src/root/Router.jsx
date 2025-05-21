@@ -6,6 +6,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AllPlants from "../pages/AllPlants";
 import DetailsPage from "../pages/DetailsPage";
+import MyPlant from "../pages/MyPlant";
 
 
 export const router = createBrowserRouter([
@@ -36,6 +37,10 @@ export const router = createBrowserRouter([
         {
             path: "plants-details/:id",
             element:<DetailsPage/>
+        },
+        {
+            path: "my-plants",
+            element:<MyPlant/>
         }
     ]
   },
