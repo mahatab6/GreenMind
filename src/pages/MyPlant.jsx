@@ -7,8 +7,9 @@ const MyPlant = () => {
     const {activeUser} = useContext(AuthContext);
 
     const email = activeUser?.email ;
-
     const [allPlant, setAllPlant] = useState([]);
+   
+
   
     useEffect(()=>{
         fetch('http://localhost:3000/all-plants')
@@ -38,19 +39,24 @@ const MyPlant = () => {
         })
             .then(res => res.json())
             .then(data => {
-                data.deletedCount(
+                if (data.deletedCount > 0) {
                     Swal.fire({
                         title: "Deleted!",
-                        text: "Your file has been deleted.",
+                        text: "Your plant has been deleted.",
                         icon: "success"
-                        })
-                )
+                    });
+
+                    const updatedPlants = allPlant.filter(plant => plant._id !== id);
+                    setAllPlant(updatedPlants);
+                }
+                            
             })
         }
         });
     }
 
     const myPlantData = allPlant.filter((plant)=> plant.email === email);
+
 
       
     return (
