@@ -78,7 +78,7 @@ const Navbar = () => {
                     }
 
                     {
-                        activeUser? <Link onClick={()=>{handlelogOut()}} className='btn'>LogOut</Link>:<Link to="/login" className='btn'>LogIn</Link>
+                        activeUser? <Link onClick={()=>{handlelogOut()}} className='btn bg-green-600'>LogOut</Link>:<Link to="/login" className='btn bg-green-600'>LogIn</Link>
                     }
                 </div>
             </div>
