@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Link, } from 'react-router';
+import Swal from 'sweetalert2';
 
 const MyPlant = () => {
     const {activeUser} = useContext(AuthContext);
@@ -15,10 +16,41 @@ const MyPlant = () => {
         .then(data => {
             setAllPlant(data)
           })
-      },[])
+    },[])
     
+    const handleDelete = (id) =>{
+        Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+        if (result.isConfirmed) {
 
-      const myPlantData = allPlant.filter((plant)=> plant.email === email);
+            fetch(`http://localhost:3000/all-plants/${id}`,{
+             method: "DELETE",
+             headers: {
+                    "Content-Type": "application/json",
+                },
+        })
+            .then(res => res.json())
+            .then(data => {
+                data.deletedCount(
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                        })
+                )
+            })
+        }
+        });
+    }
+
+    const myPlantData = allPlant.filter((plant)=> plant.email === email);
 
       
     return (
@@ -55,7 +87,7 @@ const MyPlant = () => {
 
                     <div className="flex justify-between pt-4">
                     <Link to={`/update/${treePlant._id}`} className="btn w-1/3 bg-green-500 text-white rounded-md py-2">Update</Link>
-                    <button className="btn w-1/3 bg-red-500 text-white rounded-md py-2">Delete</button>
+                    <button onClick={()=> handleDelete(treePlant._id)} className="btn w-1/3 bg-red-500 text-white rounded-md py-2">Delete</button>
                     </div>
                 </div>
                 </div>
