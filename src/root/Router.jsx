@@ -10,6 +10,7 @@ import MyPlant from "../pages/MyPlant";
 import Update from "../pages/Update";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
+import PrivateRouter from "../context/PrivateRouter";
 
 
 export const router = createBrowserRouter([
@@ -23,7 +24,7 @@ export const router = createBrowserRouter([
         },
         {
             path: "add-plant",
-            element:<AddPlant/>
+            element:<PrivateRouter><AddPlant/></PrivateRouter>
         },
         {
             path: "login",
@@ -39,11 +40,11 @@ export const router = createBrowserRouter([
         },
         {
             path: "plants-details/:id",
-            element:<DetailsPage/>
+            element:<PrivateRouter><DetailsPage/></PrivateRouter>
         },
         {
             path: "my-plants",
-            element:<MyPlant/>
+            element:<PrivateRouter><MyPlant/></PrivateRouter>
         },
         {
             path: "update/:id",

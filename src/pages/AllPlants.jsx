@@ -1,17 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
+import Loading from './Loading';
+import { FaSortUp, FaSortDown } from "react-icons/fa";
 
 const AllPlants = () => {
 
     const [allPlant, setAllPlant] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
         fetch('http://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data => {
-            setAllPlant(data)
+            setAllPlant(data);
+            setLoading(false);
         })
     },[])
+
+    if(loading){
+        return <Loading/>;
+    }
+
+    const handleSort = (field, order) => {
+        setLoading(true); 
+        fetch(`http://localhost:3000/all-plants?sortBy=${field}&order=${order}`)
+            .then(res => res.json())
+            .then(data => {
+                setAllPlant(data);
+                setLoading(false);
+            });
+    };
+
+
 
     return (
         <div className='w-11/12 mx-auto py-10'>
@@ -24,17 +44,15 @@ const AllPlants = () => {
                     <div className=" p-2 mx-auto sm:p-4 dark:text-gray-800 ">
                         <div className="overflow-x-auto">
                             <table className="min-w-full text-xs">
-                                <thead className="dark:bg-gray-300">
-                                    <tr className="text-center">
+                                <thead className="dark:bg-gray-300 ">
+                                    <tr className="text-center ">
                                         <th className="p-3 ">No:</th>
                                         <th className="p-3 ">Photo</th>
                                         <th className="p-3 ">Plant name</th>
                                         <th className="p-3 ">Category</th>
                                         <th className="p-3 ">Watering frequency</th>
-                                        <th className="p-3 ">Next Watering Date</th>
-                                        <th className="p-3 ">Care Level</th>
+                                        <th className="p-3"><div className='flex gap-3 items-center justify-center'>Next Watering Date  <span><FaSortUp size={25} className="cursor-pointer hover:text-green-600 active:scale-110 transition" onClick={() => handleSort("NextWateringDate", "asc")}/> <FaSortDown size={25} className="cursor-pointer hover:text-green-600 active:scale-110 transition" onClick={() => handleSort("NextWateringDate", "desc")}/></span></div> </th>
                                         <th className="p-3 ">Actions</th>
-                                        
                                     </tr>
                                 </thead>
 
@@ -66,9 +84,6 @@ const AllPlants = () => {
                                                     </td>
                                                     <td className="p-3 justify-items-center">
                                                         <p>{plant.NextWateringDate}</p>
-                                                    </td>
-                                                    <td className="p-3 justify-items-center">
-                                                        <p>{plant.careLevel}</p>
                                                     </td>
                                                     <td className="p-3">
                                                         <div className="flex justify-center">

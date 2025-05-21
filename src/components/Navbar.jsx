@@ -5,26 +5,40 @@ import ThemeToggle from './ThemeToggle';
 import { AuthContext } from '../context/AuthContext';
 
 const Navbar = () => {
-      const link = (
-            <>
-            <li>
-                <NavLink to="/" className={({isActive}) => isActive ? "border-b-2": '' }>Home</NavLink>
-            </li>
-            <li> 
-                <NavLink to="/all-plants" className={({isActive}) => isActive ? "border-b-2": '' }>All Plants</NavLink>
-            </li>
-            <li>
-                <NavLink to="/add-plant" className={({isActive}) => isActive ? "border-b-2": '' }>Add Plant</NavLink>
-                
-            </li>
-            <li>
-                <NavLink to="/my-plants" className={({isActive}) => isActive ? "border-b-2": '' }>My Plants</NavLink>
-            </li>
-            </>
-        )
-
         const {activeUser, logOut} = useContext(AuthContext)
         const navigate = useNavigate();
+        const link = (
+        <>
+            <li>
+            <NavLink to="/" className={({ isActive }) => isActive ? "border-b-2" : ""}>
+                Home
+            </NavLink>
+            </li>
+            <li>
+            <NavLink to="/all-plants" className={({ isActive }) => isActive ? "border-b-2" : ""}>
+                All Plants
+            </NavLink>
+            </li>
+
+            {activeUser?.email && (
+            <>
+                <li>
+                <NavLink to="/add-plant" className={({ isActive }) => isActive ? "border-b-2" : ""}>
+                    Add Plant
+                </NavLink>
+                </li>
+                <li>
+                <NavLink to="/my-plants" className={({ isActive }) => isActive ? "border-b-2" : ""}>
+                    My Plants
+                </NavLink>
+                </li>
+            </>
+            )}
+        </>
+        );
+
+
+        
         
         const handlelogOut = () =>{
             logOut()

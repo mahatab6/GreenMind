@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { Link, } from 'react-router';
 import Swal from 'sweetalert2';
+import Loading from './Loading';
 
 const MyPlant = () => {
     const {activeUser} = useContext(AuthContext);
-
+    const [loading, setLoading] = useState(true); 
     const email = activeUser?.email ;
     const [allPlant, setAllPlant] = useState([]);
    
@@ -15,9 +16,14 @@ const MyPlant = () => {
         fetch('http://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data => {
-            setAllPlant(data)
+            setAllPlant(data);
+            setLoading(false);
+
           })
     },[])
+
+    if (loading) {
+        return <Loading />; } 
     
     const handleDelete = (id) =>{
         Swal.fire({
