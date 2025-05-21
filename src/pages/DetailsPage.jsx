@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import Loading from './Loading';
 
 const DetailsPage = () => {
 
@@ -18,10 +19,9 @@ const DetailsPage = () => {
     },[])
 
     const singlePlant = allPlant.find((plant)=>plant._id === id);
-    console.log(singlePlant)
 
     if (loading) {
-    return <p className="text-center text-xl py-10">Loading...</p>;
+    return <Loading/>;
      }
 
     const {image, plantName,scientificName, category,careLevel,wateringFrequency,healthStatus,NextWateringDate,LastWateredDate

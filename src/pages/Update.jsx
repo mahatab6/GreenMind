@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useParams } from 'react-router';
+import Loading from './Loading';
 
 const Update = () => {
 
@@ -21,7 +22,7 @@ const Update = () => {
     const plantUpdate = allPlant.find((plants)=> plants._id === id);
 
     if (!plantUpdate) {
-    return <div className="text-center py-10 text-lg">Loading plant data...</div>;}
+    return <Loading/>;}
 
 
     const {LastWateredDate,NextWateringDate,careLevel,category,description,email,healthStatus,image,name,plantName,scientificName,wateringFrequency} = plantUpdate ;
