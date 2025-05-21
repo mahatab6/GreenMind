@@ -9,6 +9,7 @@ import DetailsPage from "../pages/DetailsPage";
 import MyPlant from "../pages/MyPlant";
 import Update from "../pages/Update";
 import Contact from "../pages/Contact";
+import NotFound from "../pages/NotFound";
 
 
 export const router = createBrowserRouter([
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
         {
             path: "contact",
             element:<Contact/>
+        },
+        {
+            path: "*",
+            element:<NotFound/>
         }
     ]
   },

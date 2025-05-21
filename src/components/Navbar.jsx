@@ -78,7 +78,7 @@ const Navbar = () => {
                     }
 
                     {
-                        activeUser? <Link onClick={()=>{handlelogOut()}} className='btn bg-green-600'>LogOut</Link>:<Link to="/login" className='btn bg-green-600'>LogIn</Link>
+                        activeUser? <Link onClick={()=>{handlelogOut()}} className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link>:<Link to="/login" className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogIn</Link>
                     }
                 </div>
             </div>
