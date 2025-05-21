@@ -15,6 +15,7 @@ const NewPlant = () => {
   }, []);
 
   return (
+    
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center py-10">
       {display.map((treePlant) => (
         <div
