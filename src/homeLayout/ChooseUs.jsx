@@ -14,7 +14,7 @@ const ChooseUs = () => {
 
             <div className='flex items-center justify-center'>
                 <img className='w-[30px]' src={leaf} alt="" />
-                <h1 className='text-xl text-[#1A9120]'>Why Choose Us</h1>
+                <h1 className='text-xl text-green-600'>Why Choose Us</h1>
             </div>
 
             <h1 className='text-2xl md:text-4xl font-bold text-center py-2'>Why choose Green Mind</h1>

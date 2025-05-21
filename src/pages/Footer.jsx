@@ -37,7 +37,7 @@ const Footer = () => {
                         <li>Meet the Team</li>
                         <li>News & Media</li>
                         <li>Our Projects</li>
-                        <li>Contact us</li>
+                        <Link to="/contact">Contact us</Link>
                     </ul>
                 </div>
                 <div className='space-y-3'>
