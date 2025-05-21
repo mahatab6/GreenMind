@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const AllPlants = () => {
 
@@ -71,7 +72,12 @@ const AllPlants = () => {
                                                     </td>
                                                     <td className="p-3">
                                                         <div className="flex justify-center">
-                                                            <button className="btn">View Details</button>
+                                                            <Link
+                                                            to={`/plants-details/${plant._id}`}
+                                                            className="btn w-full bg-[#4CAF50] text-white hover:bg-[#388E3C]"
+                                                            >
+                                                            View Details
+                                                            </Link>
                                                         </div>
                                                     </td>
                                                 </tr>
