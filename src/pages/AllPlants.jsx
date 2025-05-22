@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import Loading from './Loading';
 import { FaSortUp, FaSortDown } from "react-icons/fa";
+import { Helmet } from 'react-helmet';
 
 const AllPlants = () => {
 
@@ -9,7 +10,7 @@ const AllPlants = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('https://plant-care-server-flax.vercel.app/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data);
@@ -23,7 +24,7 @@ const AllPlants = () => {
 
     const handleSort = (field, order) => {
         setLoading(true); 
-        fetch(`http://localhost:3000/all-plants?sortBy=${field}&order=${order}`)
+        fetch(`https://plant-care-server-flax.vercel.app/all-plants?sortBy=${field}&order=${order}`)
             .then(res => res.json())
             .then(data => {
                 setAllPlant(data);
@@ -35,6 +36,9 @@ const AllPlants = () => {
 
     return (
         <div className='w-11/12 mx-auto py-10'>
+            <Helmet>
+            <title>All plant | GreenMind</title>
+            </Helmet>
             <div className='text-center space-y-2 pb-10'>
                 <h1 className='text-xl md:text-3xl font-semibold'>All Your Plants in One Place</h1>
                 <p className='text-base font-normal'>Keep track of your green friends with ease! Below is a list of all your plants, <br /> showing essential care information at a glance. You can sort them by next watering <br /> date or care level to prioritize your plant care routine.</p>

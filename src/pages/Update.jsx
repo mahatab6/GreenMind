@@ -4,6 +4,7 @@ import DatePicker from 'react-datepicker';
 import { useParams } from 'react-router';
 import Loading from './Loading';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const Update = () => {
 
@@ -13,7 +14,7 @@ const Update = () => {
     const [nextWatering, setNextWatering] = useState(null);
     
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('https://plant-care-server-flax.vercel.app/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data)
@@ -47,7 +48,7 @@ const Update = () => {
         
         const updateData = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
 
-        fetch(`http://localhost:3000/all-plants/${id}`,{
+        fetch(`https://plant-care-server-flax.vercel.app/all-plants/${id}`,{
              method: "PUT",
              headers: {
                     "Content-Type": "application/json",
@@ -70,7 +71,9 @@ const Update = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
-
+            <Helmet>
+                <title>Plant Update | GreenMind</title>
+            </Helmet>
             <div className='text-center space-y-2 pt-10'>
                 <h1 className='text-xl md:text-3xl font-semibold'>Update Plant Information</h1>
                 <p className='text-base font-normal'>Need to make a change? Keep your plant details up to date to ensure accurate care <br /> reminders and better tracking. Edit the information below to reflect <br /> your plant’s current condition and care needs.</p>

@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import { Link, } from 'react-router';
 import Swal from 'sweetalert2';
 import Loading from './Loading';
+import { Helmet } from 'react-helmet';
 
 const MyPlant = () => {
     const {activeUser} = useContext(AuthContext);
@@ -13,7 +14,7 @@ const MyPlant = () => {
 
   
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('https://plant-care-server-flax.vercel.app/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data);
@@ -37,7 +38,7 @@ const MyPlant = () => {
         }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`http://localhost:3000/all-plants/${id}`,{
+            fetch(`https://plant-care-server-flax.vercel.app/all-plants/${id}`,{
              method: "DELETE",
              headers: {
                     "Content-Type": "application/json",
@@ -67,6 +68,9 @@ const MyPlant = () => {
       
     return (
         <div className="w-11/12 mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 justify-items-center py-10">
+            <Helmet>
+            <title>My plant | GreenMind</title>
+            </Helmet>
             {myPlantData.map((treePlant) => (
                 <div
                 key={treePlant._id}

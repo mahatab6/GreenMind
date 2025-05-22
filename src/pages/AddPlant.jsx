@@ -4,6 +4,7 @@ import { format } from 'date-fns';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -33,7 +34,7 @@ const AddPlant = () => {
         
         const fromData = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
 
-        fetch('http://localhost:3000/add-plant',{
+        fetch('https://plant-care-server-flax.vercel.app/add-plant',{
              method: "POST",
              headers: {
                     "Content-Type": "application/json",
@@ -54,6 +55,9 @@ const AddPlant = () => {
 
     return (
         <div className='w-11/12 mx-auto'>
+            <Helmet>
+            <title>Add plant | GreenMind</title>
+            </Helmet>
             <div className='text-center space-y-2 pt-10'>
                 <h1 className='text-xl md:text-3xl font-semibold'>Add a New Plant to Your Green Family</h1>
                 <p className='text-base font-normal'>Keep your plant collection growing! Enter the details below to start tracking and caring for your newest leafy friend.</p>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import Loading from './Loading';
+import { Helmet } from 'react-helmet';
 
 const DetailsPage = () => {
 
@@ -9,7 +10,7 @@ const DetailsPage = () => {
      const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('https://plant-care-server-flax.vercel.app/all-plants')
         .then(res => res.json())
         .then(data =>{
             setAllPlant(data);
@@ -28,6 +29,9 @@ const DetailsPage = () => {
 
     return (
         <div className='md:py-20'>
+            <Helmet>
+            <title>Details Pages | GreenMind</title>
+            </Helmet>
             <div className="max-w-4xl mx-auto p-4 space-y-6 bg-white rounded-xl shadow-md">
                 <img
                     src={image}

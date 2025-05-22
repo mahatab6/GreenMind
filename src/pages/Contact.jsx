@@ -3,6 +3,7 @@ import leaf from '../assets/leaf.png'
 import { FaLocationDot } from "react-icons/fa6";
 import { IoCall } from "react-icons/io5";
 import { IoMdMail } from "react-icons/io";
+import { Helmet } from 'react-helmet';
 
 
 
@@ -10,6 +11,9 @@ import { IoMdMail } from "react-icons/io";
 const Contact = () => {
     return (
         <div>
+            <Helmet>
+            <title>Contact | GreenMind</title>
+            </Helmet>
             <div className='flex items-center justify-center pt-10 gap-2'>
                 <img className='w-[30px]' src={leaf} alt="" />
                 <h1 className='text-xl text-green-600'>Contact</h1>

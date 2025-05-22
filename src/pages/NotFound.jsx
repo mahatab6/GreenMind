@@ -2,10 +2,14 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { FaLeaf } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 const NotFound = () => {
   return (
     <div className="h-screen flex flex-col items-center justify-center text-center bg-green-50 text-green-800 p-6">
+      <Helmet>
+          <title>NotFound | GreenMind</title>
+      </Helmet>
       <FaLeaf size={80} className="mb-6 text-green-400" />
       <h1 className="text-5xl font-bold mb-4">404 - Page Not Found</h1>
       <p className="text-xl mb-6">

@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { Link, useLocation, useNavigate, } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
 import { Bounce, toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
 
@@ -80,6 +81,9 @@ const Login = () => {
     
     return (
         <div className='w-11/12 mx-auto min-h-[calc(100vh-150px)]'>
+            <Helmet>
+            <title>Login | GreenMind</title>
+            </Helmet>
             <div className="flex flex-col mx-auto border-1 justify-items-center my-5 md:my-20 max-w-md p-6 rounded-md sm:p-10 ">
                 <div className="mb-8 text-center">
                     <h1 className="my-3 text-4xl font-bold">Great to have you back!</h1>
