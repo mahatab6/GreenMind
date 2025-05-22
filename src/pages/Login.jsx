@@ -1,11 +1,14 @@
 
 import { useContext } from 'react';
-import { Link, } from 'react-router';
+import { Link, useLocation, useNavigate, } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
+import { Bounce, toast } from 'react-toastify';
 
 const Login = () => {
 
     const {login, GoogleLogin} = useContext(AuthContext)
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handlelogin = e =>{
          e.preventDefault();
@@ -13,22 +16,65 @@ const Login = () => {
          const password = e.target.password.value;
 
         login(email, password)
-        .then(result => {
-                    console.log(result);
+        .then(() => {
+            toast.success('Wow successfully login', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+                });
+            navigate(location?.state || '/');
+                    
                 })
-        .catch(error => {
-                    console.log(error);
+        .catch(() => {
+                    toast.error('Login failed due to the password and email rong', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                        });
                 });
 
     }
 
     const handleGoole = () =>{
         GoogleLogin()
-        .then(result => {
-                    console.log(result);
-                })
-        .catch(error => {
-                    console.log(error);
+        .then(() => {
+            toast.success('Wow successfully login', {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: false,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+                });
+            navigate(location?.state || '/');
+        })
+        .catch(() => {
+                toast.error('Login failed ', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                        });
                 });
     }
     
@@ -60,7 +106,7 @@ const Login = () => {
                     </div>
                     <div className="space-y-2">
                         <div>
-                            <button type="submite" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-[#82B440] dark:text-gray-50">Sign in</button>
+                            <button type="submite" className="w-full px-8 py-3 font-semibold rounded-md hover:bg-green-600 cursor-pointer bg-green-500 dark:text-gray-50">Sign in</button>
                         </div>
                         <p className="px-6 text-sm text-center dark:text-gray-600">New here?
                             <Link to="/register" className="hover:underline dark:text-blue-500">Register here</Link>
