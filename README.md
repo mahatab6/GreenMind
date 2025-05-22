@@ -1,12 +1,38 @@
-# React + Vite
+# 🌿 GreenMind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**GreenMind** is a modern full-stack web application designed to promote eco-friendly living and sustainable practices. Built using **React** on the frontend and **Node.js/Express** with **MongoDB** on the backend, it features a smooth, responsive user experience powered by the latest tools and libraries.
 
-Currently, two official plugins are available:
+🌐 Live Demo: https://plant-care-60.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- ⚛️ Built with React 19
+- 🎨 Styled using TailwindCSS 4 and AOS animations
+- 📅 Smart date handling with `date-fns`
+- 🔥 Firebase integration for backend and hosting
+- 🔍 SEO friendly with `react-helmet`
+- 🔄 Routing with `react-router`
+- 📊 Count up animations, typewriter effects, and tooltips
+- 📦 Swiper sliders and responsive design
+- ☑️ Sweet Alerts, Toast Notifications, and interactive UI
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧩 Tech Stack
+
+### Frontend
+
+- **React** ^
+- **TailwindCSS**
+- **Firebase** for optional auth
+- **AOS**, **Swiper**, **Toastify**, **React Icons**, **React Helmet**
+- **React Router v7**, **Date-fns**, **SweetAlert2**, etc.
+
+### Backend
+
+- **Express** 
+- **MongoDB** 
+- **CORS**, **dotenv**, **Nodemon** for development
+
+
+Made with ❤️ for a greener tomorrow.
