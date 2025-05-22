@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 import { AuthContext } from '../context/AuthContext';
+import { Bounce, toast } from 'react-toastify';
 
 
 
@@ -21,23 +22,50 @@ const Register = () => {
 
         const passwordRegExp = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
         if (!passwordRegExp.test(password)) {
-            alert("Password must be at least 6 characters long and include both uppercase and lowercase letters.");
+                toast.error('Password must be at least 6 characters long and include both uppercase and lowercase letters. ', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                        });
             return;
         }
 
         register(email,password)  
-             .then(() => {
+            .then(() => {
                 profile({displayName:name, photoURL: photoURL})
-                .then( () => {
-                    
-                })
+                toast.success('Wow successfully registration', {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                    });
 
                 navigate('/');
             })
-            .catch(error => {
-                    console.log(error);
-                });
-
+            .catch(() => {
+                    toast.error('Registration failed ', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: false,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                        });
+            })
     }
     return (
         <div className='w-11/12 mx-auto min-h-[calc(100vh-150px)]'>
@@ -53,21 +81,21 @@ const Register = () => {
                     <div className="space-y-4">
                         <div>
                             <label htmlFor="name" className="block mb-2 text-sm">Name</label>
-                            <input type="text" name="name"  placeholder="Enter your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type="text" name="name" required placeholder="Enter your name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </div>
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm">Email address</label>
-                            <input type="email" name="email"  placeholder="Enter your email" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type="email" name="email" required placeholder="Enter your email" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </div>
                         <div>
                             <label htmlFor="email" className="block mb-2 text-sm">PhotoURL</label>
-                            <input type="text" name="photoURL"  placeholder="Enter your Photo URL" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type="text" name="photoURL" required placeholder="Enter your Photo URL" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </div>
                         <div className='relative'>
                             <div className="flex justify-between mb-2">
                                 <label htmlFor="password" className="text-sm">Password</label>
                             </div>
-                            <input type={showPassword? "text":"password"} name="password" id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type={showPassword? "text":"password"} name="password" required id="password" placeholder="*****" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                              <div className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer pt-5"onClick={() => setShowPassword(prevState => !prevState)} 
                                     >
                                         {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
@@ -76,7 +104,7 @@ const Register = () => {
                     </div>
                     <div className="space-y-2">
                         <div>
-                            <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md dark:bg-[#82B440] dark:text-gray-50">Sign in</button>
+                            <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-green-500 hover:bg-green-600 cursor-pointer dark:text-gray-50">Sign in</button>
                         </div>
                         <p className="px-6 text-sm text-center dark:text-gray-600">Already have an Green Mind Account? 
                             <Link to="/login" className="hover:underline dark:text-blue-500">Login here</Link>
