@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-datepicker';
 import { useParams } from 'react-router';
 import Loading from './Loading';
+import Swal from 'sweetalert2';
 
 const Update = () => {
 
@@ -54,8 +55,14 @@ const Update = () => {
              body: JSON.stringify(updateData),
         })
         .then(res => res.json())
-        .then(data =>{
-            console.log(data)
+        .then(() =>{
+            Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your plant successful updated",
+            showConfirmButton: false,
+            timer: 1500
+            });
         })
     }
 
@@ -176,7 +183,7 @@ const Update = () => {
                      </div>
                      
                      <div className='flex justify-center pt-5'>
-                         <button type='submite' className='btn w-2/3 bg-green-500'>Update</button>
+                         <button type='submite' className='btn w-2/3 bg-green-500 cursor-pointer border-0 hover:bg-green-600 '>Update</button>
                      </div>
  
                 </form>

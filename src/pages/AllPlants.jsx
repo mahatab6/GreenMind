@@ -89,7 +89,7 @@ const AllPlants = () => {
                                                         <div className="flex justify-center">
                                                             <Link
                                                             to={`/plants-details/${plant._id}`}
-                                                            className="btn w-full bg-[#4CAF50] text-white hover:bg-[#388E3C]"
+                                                            className="btn w-full bg-green-500 text-white border-0 shadow-md hover:bg-green-600 cursor-pointer"
                                                             >
                                                             View Details
                                                             </Link>

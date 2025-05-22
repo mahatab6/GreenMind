@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from 'react-router';
 import green from '../assets/GreenMind.png'
 import ThemeToggle from './ThemeToggle';
 import { AuthContext } from '../context/AuthContext';
+import { Bounce, toast } from 'react-toastify';
 
 const Navbar = () => {
         const {activeUser, logOut} = useContext(AuthContext)
@@ -42,13 +43,20 @@ const Navbar = () => {
         
         const handlelogOut = () =>{
             logOut()
-            .then(result => {
-                    console.log(result);
+            .then(() => {
+                toast('Logout Done', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: false,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                    });
                     navigate('/');
                 })
-            .catch(error => {
-                    console.log(error);
-                });
         }
 
     return (

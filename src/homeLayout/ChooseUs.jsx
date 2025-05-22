@@ -7,6 +7,8 @@ import secure from '../assets/cyber-security.png'
 import magic from '../assets/magic.png'
 import ux from '../assets/ux.png'
 import plantcenter from '../assets/plantcenter.png'
+import { Typewriter } from 'react-simple-typewriter'
+
 
 const ChooseUs = () => {
     return (
@@ -17,7 +19,17 @@ const ChooseUs = () => {
                 <h1 className='text-xl text-green-600'>Why Choose Us</h1>
             </div>
 
-            <h1 className='text-2xl md:text-4xl font-bold text-center py-2'>Why choose Green Mind</h1>
+            <h1 className='text-2xl md:text-4xl font-bold text-center py-2'>
+
+            <Typewriter
+            words={['Why choose Green Mind']}
+            loop={0}
+            cursor
+            cursorStyle='_'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            /></h1>
 
             <div className='hidden md:flex justify-center  md:pt-20  '>
                 <div className='w-100 space-y-5'>

@@ -3,6 +3,7 @@ import { AuthContext } from '../context/AuthContext';
 import { format } from 'date-fns';
 import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from 'sweetalert2';
 
 
 
@@ -40,12 +41,14 @@ const AddPlant = () => {
              body: JSON.stringify(fromData),
         })
         .then(res => res.json())
-        .then(data => {
-            console.log(data)
+        .then(() => {
+            Swal.fire({
+            title: "Submit Done!",
+            icon: "success",
+            draggable: true
+            });
+            from.reset()
         })
-
-
-
     };
 
 
@@ -61,12 +64,12 @@ const AddPlant = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">Plant Name</label>
-                            <input type="text" name="plantname"  placeholder="Enter your plant name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300" />
+                            <input type="text" name="plantname" required placeholder="Enter your plant name" className="w-full px-3 py-2 border rounded-md dark:border-gray-300" />
                         </fieldset>
 
                         <fieldset className="fieldset">
                             <label className="block mb-2 text-xl">Upload Image</label>
-                            <input type="text" name="image"  placeholder="Enter your plant image" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
+                            <input type="text" name="image" required placeholder="Enter your plant image" className="w-full px-3 py-2 border rounded-md dark:border-gray-300 " />
                         </fieldset>
 
                         <fieldset className="fieldset">
@@ -163,7 +166,7 @@ const AddPlant = () => {
                     </div>
                     
                     <div className='flex justify-center pt-5'>
-                        <button type='submit' className='btn w-2/3 bg-green-500'>Submit</button>
+                        <button type='submit' className='btn w-2/3 bg-green-500 hover:bg-green-600 cursor-pointer border-0'>Submit</button>
                     </div>
 
                 </form>

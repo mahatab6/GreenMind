@@ -24,8 +24,7 @@ const DetailsPage = () => {
     return <Loading/>;
      }
 
-    const {image, plantName,scientificName, category,careLevel,wateringFrequency,healthStatus,NextWateringDate,LastWateredDate
-} = singlePlant ;
+    const {image, plantName,scientificName, category,careLevel,wateringFrequency,healthStatus,NextWateringDate,LastWateredDate} = singlePlant ;
 
     return (
         <div className='md:py-20'>

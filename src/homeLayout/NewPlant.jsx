@@ -46,7 +46,7 @@ const NewPlant = () => {
             </div>
             <Link
               to={`/plants-details/${treePlant._id}`}
-              className="btn w-full bg-[#4CAF50] text-white hover:bg-[#388E3C]"
+              className="btn w-full bg-green-500 shadow-md border-0  text-white hover:bg-green-600"
             >
               View Details
             </Link>
