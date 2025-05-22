@@ -98,8 +98,8 @@ const Navbar = () => {
                     {
                         activeUser && activeUser.displayName ? (
                             <Link to="/profile">
-                            <img
-                                className="w-10 h-10 rounded-full border-2 border-green-500 "
+                            <img 
+                                className=" w-10 h-10 rounded-full border-2 border-green-500 "
                                 src={activeUser.photoURL || "/default-avatar.png"}
                                 alt=""
                                 title={activeUser.displayName}

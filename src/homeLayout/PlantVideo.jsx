@@ -1,5 +1,6 @@
 import React from 'react';
 import plantvide from '../assets/plantvideo.jpg';
+import { Tooltip } from 'react-tooltip';
 
 const PlantVideo = () => {
   return (
@@ -28,12 +29,13 @@ const PlantVideo = () => {
           <span className="relative flex w-20 h-20 items-center justify-center">
             <span className="absolute inline-flex w-full h-full animate-ping rounded-full bg-white opacity-75"></span>
             <span className="relative inline-flex w-20 h-20 rounded-full items-center justify-center text-white font-bold text-lg">
-              <button
+              <button data-tooltip-id="my-tooltip" data-tooltip-content="Watch Video"
                 className="btn bg-white border-none text-black p-5 rounded-full"
                 onClick={() => document.getElementById('my_modal_1').showModal()}
               >
                 Play
               </button>
+              <Tooltip id="my-tooltip" />
             </span>
           </span>
         </div>

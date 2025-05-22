@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import leaf from '../assets/leaf.png'
 import growth from '../assets/growth.png'
 import reminder from '../assets/reminder.png'
@@ -8,9 +8,20 @@ import magic from '../assets/magic.png'
 import ux from '../assets/ux.png'
 import plantcenter from '../assets/plantcenter.png'
 import { Typewriter } from 'react-simple-typewriter'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const ChooseUs = () => {
+
+    useEffect(() => {
+    AOS.init({
+      duration: 3000,
+      easing: 'linear', 
+    
+    });
+  }, []);
+
     return (
         <div className='pb-10 w-11/12 mx-auto'>
 
@@ -49,7 +60,9 @@ const ChooseUs = () => {
                         <p className='text-base'>Each plant is different. GreenMind tailors care recommendations based on species, sunlight, and watering needs.</p>
                     </div>
                 </div>
+                <div data-aos="fade-up" data-aos-easing="linear">
                 <img src={plantcenter} alt="" />
+                </div>
                 <div className='w-100 space-y-5'>
                     <div className=' space-y-2'>
                         <img className='w-[100px]' src={secure} alt="" />
