@@ -61,8 +61,17 @@ const Navbar = () => {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content rounded-box z-1 bg-white mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content space-y-1 rounded-box z-1 bg-white mt-3 w-52 p-2 shadow">
                         {link}
+                        {
+                        activeUser?<>
+                        <Link onClick={()=>{handlelogOut()}} className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link>
+                        </>:
+                        <>
+                        <Link to="/login" className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogIn</Link>
+                        <Link to="/register" className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">Register</Link>
+                        </>
+                        }
                     </ul>
                     </div>
                     <div className='flex items-center'>
@@ -92,7 +101,12 @@ const Navbar = () => {
                     }
 
                     {
-                        activeUser? <Link onClick={()=>{handlelogOut()}} className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link>:<Link to="/login" className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogIn</Link>
+                        activeUser? <Link onClick={()=>{handlelogOut()}} className=" hidden lg:flex bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link>: <>
+                        <Link to="/login" className=" hidden lg:flex bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogIn</Link>
+
+                        <Link to="/register" className="hidden lg:flex  bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">Register</Link>
+                        </>
+                        
                     }
                 </div>
             </div>
