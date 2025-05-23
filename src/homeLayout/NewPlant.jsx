@@ -33,13 +33,13 @@ const NewPlant = () => {
                 Plant name: {treePlant.plantName}
               </h3>
               <div className=" items-center justify-between">
-                <p className="text-xl font-normal">
+                <p className="text-xl font-normal text-black">
                   Category: {treePlant.category}
                 </p>
-                <p className="text-xl font-normal">
+                <p className="text-xl font-normal text-black">
                   Care Level: {treePlant.careLevel}
                 </p>
-                <p className="text-xl font-normal">
+                <p className="text-xl font-normal text-black">
                   Watering frequency: {treePlant.wateringFrequency}
                 </p>
               </div>
