@@ -92,12 +92,12 @@ const MyPlant = () => {
                     <p className="text-gray-700">{treePlant.description}</p>
 
                     <div className="pt-2 space-y-1 text-base">
-                        <p><strong>Category:</strong> {treePlant.category}</p>
-                        <p><strong>Care Level:</strong> {treePlant.careLevel}</p>
-                        <p><strong>Watering Frequency:</strong> Every {treePlant.wateringFrequency} days</p>
-                        <p><strong>Health Status:</strong> {treePlant.healthStatus}</p>
-                        <p><strong>Last Watered:</strong> {treePlant.LastWateredDate}</p>
-                        <p><strong>Next Watering:</strong> {treePlant.NextWateringDate}</p>
+                        <p className='text-black'><strong>Category:</strong> {treePlant.category}</p>
+                        <p className='text-black'><strong>Care Level:</strong> {treePlant.careLevel}</p>
+                        <p className='text-black'><strong>Watering Frequency:</strong> Every {treePlant.wateringFrequency} days</p>
+                        <p className='text-black'><strong>Health Status:</strong> {treePlant.healthStatus}</p>
+                        <p className='text-black'><strong>Last Watered:</strong> {treePlant.LastWateredDate}</p>
+                        <p className='text-black'><strong>Next Watering:</strong> {treePlant.NextWateringDate}</p>
                     </div>
                     </div>
 
