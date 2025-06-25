@@ -1,65 +1,72 @@
-🌿 GreenMind
-GreenMind is a modern full-stack web application designed to promote eco-friendly living and sustainable practices. It combines a sleek, responsive interface with powerful backend functionality to deliver a smooth user experience.
+GreenMind
+
+GreenMind is a modern full-stack web application that encourages sustainable, plant-based living through a beautiful, responsive user interface and powerful backend support. Built with React, TailwindCSS, Node.js, Express, and MongoDB, it offers an intuitive experience for managing plant care and promotes eco-friendly habits.
 
 🔗 Live Demo: https://plant-care-60.netlify.app
+🔧 Backend Repo: https://github.com/mahatab6/GreenMind-server
 
 🚀 Features
-⚛️ Built with React 19 (v19.1.0)
+⚛️ Frontend powered by React 19
 
-🎨 Styled using TailwindCSS 4 (v4.1.7) and AOS animations (v2.3.4)
+🎨 Styled with TailwindCSS 4 and AOS animations
 
-📅 Smart date handling with date-fns (v4.1.0)
+🔄 Routing with React Router v7
 
-🔥 Firebase (v11.7.3) for backend services and hosting
+🔥 Firebase integration for optional authentication and hosting
 
-🔍 SEO optimized using react-helmet (v6.1.0)
+📅 Smart date handling via date-fns
 
-🔄 Client-side routing with React Router v7 (v7.6.0)
+📦 Enhanced UI/UX: Swiper sliders, count-up stats, tooltips, alerts
 
-✨ Engaging UI features: Count-up animations, typewriter effects, and tooltips
+📡 Full-featured backend with Express & MongoDB
 
-📦 Swiper sliders, responsive layouts, and modern UX
+🔍 SEO ready with react-helmet
 
-☑️ Interactive components: SweetAlerts (v11.21.2), Toast Notifications (v11.0.5)
+🌐 Deployed with Netlify (frontend) and Render or Railway (backend)
 
 🧩 Tech Stack
-🖥️ Frontend
-React v19.1.0
+💻 Frontend
 
-TailwindCSS v4.1.7
+| Tool                    | Version    |
+| ----------------------- | ---------- |
+| React                   | `v19.1.0`  |
+| TailwindCSS             | `v4.1.7`   |
+| Firebase                | `v11.7.3`  |
+| AOS (Animate on Scroll) | `v2.3.4`   |
+| React Router            | `v7.6.0`   |
+| date-fns                | `v4.1.0`   |
+| React Helmet            | `v6.1.0`   |
+| React CountUp           | `v6.5.3`   |
+| React Simple Typewriter | `v5.0.1`   |
+| SweetAlert2             | `v11.21.2` |
+| React Toastify          | `v11.0.5`  |
+| React Tooltip           | `v5.28.1`  |
+| Swiper                  | `v11.2.6`  |
 
-Firebase v11.7.3 – (optional auth + hosting)
+🌐 Backend
 
-AOS v2.3.4
+| Tool                | Version   |
+| ------------------- | --------- |
+| Node.js             | LTS       |
+| Express             | `v5.1.0`  |
+| MongoDB Node Driver | `v6.16.0` |
+| dotenv              | `v16.5.0` |
+| CORS                | `v2.8.5`  |
+| Nodemon             | `v3.1.10` |
 
-Swiper v11.2.6
+🔐 Environment Variables
+Backend (/backend/.env)
 
-React Toastify v11.0.5
+DB_USER=your_db_username
+DB_PASS=your_db_password
 
-React Icons v5.5.0
+Frontend (.env.local)
 
-React Helmet v6.1.0
-
-React Router v7.6.0
-
-Date-fns v4.1.0
-
-SweetAlert2 v11.21.2
-
-React CountUp v6.5.3
-
-React Tooltip v5.28.1
-
-React Simple Typewriter v5.0.1
-
-React DatePicker v8.3.0
-
-🔧 Backend
-Express.js
-
-MongoDB
-
-Development Tools: CORS, dotenv, Nodemon
+VITE_FIREBASE_API_KEY=your_firebase_api_key
 
 
-Made with ❤️ for a greener tomorrow.
+💚 Built with care for a greener tomorrow.
+
+
+
+
