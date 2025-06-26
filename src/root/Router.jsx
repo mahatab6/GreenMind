@@ -11,6 +11,7 @@ import Update from "../pages/Update";
 import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import PrivateRouter from "../context/PrivateRouter";
+import Dashboard from "../dashboardLayout/Dashboard";
 
 
 export const router = createBrowserRouter([
@@ -60,4 +61,11 @@ export const router = createBrowserRouter([
         }
     ]
   },
+  {
+    path: "/dashboard",
+    element: <PrivateRouter><Dashboard/></PrivateRouter>,
+    children: [
+        
+    ]
+  }
 ]);

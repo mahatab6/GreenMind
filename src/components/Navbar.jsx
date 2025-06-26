@@ -4,6 +4,7 @@ import green from '../assets/GreenMind.png'
 import ThemeToggle from './ThemeToggle';
 import { AuthContext } from '../context/AuthContext';
 import { Bounce, toast } from 'react-toastify';
+import Dashboard from '../dashboardLayout/Dashboard';
 
 const Navbar = () => {
         const {activeUser, logOut} = useContext(AuthContext)
@@ -95,6 +96,11 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-2">
                     <ThemeToggle/>
+                    {
+                        activeUser && <>
+                        <NavLink to="/dashboaed" className={({ isActive }) => isActive ? "border-b-2" : ""}>Dashboard</NavLink>
+                        </>
+                    }
                     {
                         activeUser && activeUser.displayName ? (
                             <Link to="/profile">
