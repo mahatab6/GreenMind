@@ -10,7 +10,7 @@ const NewPlant = () => {
       .then((res) => res.json())
       .then((data) => {
         
-        setDisplay(data.slice(0, 6)); 
+        setDisplay(data.slice(0, 8)); 
       });
   }, []);
 

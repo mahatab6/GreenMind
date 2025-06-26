@@ -6,6 +6,7 @@ import PlantVideo from './HomeComponents/PlantVideo';
 import QuickStats from './HomeComponents/QuickStats';
 import { Helmet } from 'react-helmet';
 import WeeklyPlant from './HomeComponents/WeeklyPlant';
+import CareMistakes from './HomeComponents/CareMistakes';
 
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
          <Slider/>
          <WeeklyPlant/>
          <NewPlant/>
+         <CareMistakes/>
          <ChooseUs/>
          <PlantVideo/>
          <QuickStats/>
