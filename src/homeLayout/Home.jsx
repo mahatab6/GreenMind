@@ -1,10 +1,11 @@
 import React from 'react';
-import Slider from './Slider';
-import NewPlant from './NewPlant';
-import ChooseUs from './ChooseUs';
-import PlantVideo from './PlantVideo';
-import QuickStats from './QuickStats';
+import Slider from './HomeComponents/Slider';
+import NewPlant from './HomeComponents/NewPlant';
+import ChooseUs from './HomeComponents/ChooseUs';
+import PlantVideo from './HomeComponents/PlantVideo';
+import QuickStats from './HomeComponents/QuickStats';
 import { Helmet } from 'react-helmet';
+import WeeklyPlant from './HomeComponents/WeeklyPlant';
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
             <title>Home | GreenMind</title>
             </Helmet>
          <Slider/>
+         <WeeklyPlant/>
          <NewPlant/>
          <ChooseUs/>
          <PlantVideo/>

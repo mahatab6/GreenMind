@@ -1,5 +1,5 @@
 import React from 'react';
-import plantvide from '../assets/plantvideo.jpg';
+import plantvide from '../../assets/plantvideo.jpg';
 import { Tooltip } from 'react-tooltip';
 
 const PlantVideo = () => {

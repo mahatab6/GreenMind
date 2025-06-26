@@ -1,8 +1,8 @@
 import React from 'react';
-import users from '../assets/crowd-of-users.png'
-import tracked from '../assets/route.png'
-import success from '../assets/customer-success.png'
-import bell from '../assets/bell.png'
+import users from '../../assets/crowd-of-users.png'
+import tracked from '../../assets/route.png'
+import success from '../../assets/customer-success.png'
+import bell from '../../assets/bell.png'
 import CountUp from 'react-countup';
 
 const QuickStats = () => {

@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import leaf from '../assets/leaf.png'
-import growth from '../assets/growth.png'
-import reminder from '../assets/reminder.png'
-import plant from '../assets/plant.png'
-import secure from '../assets/cyber-security.png'
-import magic from '../assets/magic.png'
-import ux from '../assets/ux.png'
-import plantcenter from '../assets/plantcenter.png'
+import leaf from '../../assets/leaf.png'
+import growth from '../../assets/growth.png'
+import reminder from '../../assets/reminder.png'
+import plant from '../../assets/plant.png'
+import secure from '../../assets/cyber-security.png'
+import magic from '../../assets/magic.png'
+import ux from '../../assets/ux.png'
+import plantcenter from '../../assets/plantcenter.png'
 import { Typewriter } from 'react-simple-typewriter'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
