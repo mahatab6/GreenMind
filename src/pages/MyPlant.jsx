@@ -14,7 +14,7 @@ const MyPlant = () => {
 
   
     useEffect(()=>{
-        fetch('https://plant-care-server-flax.vercel.app/all-plants')
+        fetch('http://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data);
@@ -38,7 +38,7 @@ const MyPlant = () => {
         }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`https://plant-care-server-flax.vercel.app/all-plants/${id}`,{
+            fetch(`http://localhost:3000/all-plants/${id}`,{
              method: "DELETE",
              headers: {
                     "Content-Type": "application/json",

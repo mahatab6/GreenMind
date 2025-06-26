@@ -6,7 +6,7 @@ const NewPlant = () => {
   const [display, setDisplay] = useState([]);
 
   useEffect(() => {
-    fetch('https://plant-care-server-flax.vercel.app/all-plants')
+    fetch('http://localhost:3000/all-plants')
       .then((res) => res.json())
       .then((data) => {
         

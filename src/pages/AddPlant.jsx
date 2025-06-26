@@ -34,7 +34,7 @@ const AddPlant = () => {
         
         const fromData = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
 
-        fetch('https://plant-care-server-flax.vercel.app/add-plant',{
+        fetch('http://localhost:3000/add-plant',{
              method: "POST",
              headers: {
                     "Content-Type": "application/json",

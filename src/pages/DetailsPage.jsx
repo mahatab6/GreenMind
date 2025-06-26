@@ -10,7 +10,7 @@ const DetailsPage = () => {
      const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('https://plant-care-server-flax.vercel.app/all-plants')
+        fetch('http://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data =>{
             setAllPlant(data);
