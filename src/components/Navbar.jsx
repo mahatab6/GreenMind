@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router';
-import green from '../assets/GreenMind.png'
 import ThemeToggle from './ThemeToggle';
 import { AuthContext } from '../context/AuthContext';
 import { Bounce, toast } from 'react-toastify';
-import Dashboard from '../dashboardLayout/Dashboard';
+import Logo from './Logo';
 
 const Navbar = () => {
         const {activeUser, logOut} = useContext(AuthContext)
@@ -83,11 +82,7 @@ const Navbar = () => {
                         }
                     </ul>
                     </div>
-                    <div className='flex items-center'>
-                        <img className='w-[50px] ' src={green} alt="" />
-                        <a className=" text-xl">GreenMind</a>
-                    </div>
-                    
+                    <Logo/>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -98,7 +93,7 @@ const Navbar = () => {
                     <ThemeToggle/>
                     {
                         activeUser && <>
-                        <NavLink to="/dashboaed" className={({ isActive }) => isActive ? "border-b-2" : ""}>Dashboard</NavLink>
+                        <NavLink to="/dashboard" className={({ isActive }) => isActive ? "border-b-2" : ""}>Dashboard</NavLink>
                         </>
                     }
                     {

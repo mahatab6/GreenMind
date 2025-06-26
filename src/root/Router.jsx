@@ -12,6 +12,7 @@ import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import PrivateRouter from "../context/PrivateRouter";
 import Dashboard from "../dashboardLayout/Dashboard";
+import Plants from "../dashboardLayout/dashboardComponents/Plants";
 
 
 export const router = createBrowserRouter([
@@ -55,17 +56,22 @@ export const router = createBrowserRouter([
             path: "contact",
             element:<Contact/>
         },
-        {
-            path: "*",
-            element:<NotFound/>
-        }
+        // {
+        //     path: "*",
+        //     element:<NotFound/>
+        // }
     ]
   },
   {
     path: "/dashboard",
     element: <PrivateRouter><Dashboard/></PrivateRouter>,
     children: [
-        
+        {
+            index: 'true',
+            element:<Plants/>
+
+        }
     ]
   }
+
 ]);
