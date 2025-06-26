@@ -36,7 +36,9 @@ const Dashboard = () => {
                 {/* Sidebar content here */}
                 <Logo/>
                 <li><Link to='/'>Home</Link></li>
-                <li><a>Sidebar Item 2</a></li>
+                <li><Link to='/add-plant'>Add New Plant</Link></li>
+                <li><Link to='/my-plants'>My Plants</Link></li>
+                
                 </ul>
             </div>
         </div>
