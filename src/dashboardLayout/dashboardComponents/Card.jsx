@@ -10,6 +10,7 @@ import { SiSimpleanalytics } from "react-icons/si";
 import { GoDotFill } from "react-icons/go";
 import PlantsSnapshot from './PlantsSnapshot';
 import PlantCareTips from './PlantCareTips';
+import UserProfile from './UserProfile';
 
 
 
@@ -122,9 +123,10 @@ const Card = () => {
 
                     <PlantsSnapshot myPlantData= { myPlantData}/>
                 </div>
-                <div className='lg:col-span-2'>
+                <div className='lg:col-span-2 '>
                     <PlantCareTips/>
-                    <h1 className='text-black'>right</h1>
+                    <UserProfile/>
+                    
                 </div>
             </div>
         </div>
