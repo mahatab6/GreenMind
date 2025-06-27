@@ -28,7 +28,6 @@ const WeeklyPlant = () => {
                             <li className='flex items-center text-xl gap-1'><FaRegLightbulb className='text-orange-300'/>Water when top inch of soil is dry</li>
                             <li className='flex items-center text-xl gap-1'><FaRegLightbulb className='text-orange-300'/>Provide a moss pole for climbing support</li>
                         </ul>
-                        <Link className='btn w-2/3 bg-green-500 shadow-md border-0  text-white hover:bg-green-600'>View Plant Details</Link>
                         
                     </div>
                 </div>

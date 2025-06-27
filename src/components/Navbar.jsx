@@ -73,7 +73,7 @@ const Navbar = () => {
                         {link}
                         {
                         activeUser?<>
-                        <Link onClick={()=>{handlelogOut()}} className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link>
+                        
                         </>:
                         <>
                         <Link to="/login" className=" inline-block bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogIn</Link>
@@ -91,26 +91,26 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end gap-2">
                     <ThemeToggle/>
-                    {
-                        activeUser && <>
-                        <NavLink to="/dashboard" className={({ isActive }) => isActive ? "border-b-2" : ""}>Dashboard</NavLink>
-                        </>
-                    }
+                    
                     {
                         activeUser && activeUser.displayName ? (
-                            <Link to="/profile">
+                            <Link className='dropdown dropdown-bottom dropdown-end'>
                             <img 
                                 className=" w-10 h-10 rounded-full border-2 border-green-500 "
                                 src={activeUser.photoURL || "/default-avatar.png"}
                                 alt=""
                                 title={activeUser.displayName}
                             />
+                            <ul tabIndex={0} className="dropdown-content menu bg-white rounded-box z-1 w-52 p-2 shadow-sm">
+                                <li><NavLink to="/dashboard" className=" lg:flex bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition mb-1">Dashboard</NavLink></li>
+                                <li><Link onClick={()=>{handlelogOut()}} className=" lg:flex bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link></li>
+                            </ul>
                             </Link>
                         ) : <span className="loading loading-ring loading-xs"></span>
                     }
 
                     {
-                        activeUser? <Link onClick={()=>{handlelogOut()}} className=" hidden lg:flex bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogOut</Link>: <>
+                        activeUser? "": <>
                         <Link to="/login" className=" hidden lg:flex bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">LogIn</Link>
 
                         <Link to="/register" className="hidden lg:flex  bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">Register</Link>
