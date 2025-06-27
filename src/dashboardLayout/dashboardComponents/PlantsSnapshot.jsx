@@ -15,9 +15,9 @@ const PlantsSnapshot = ({myPlantData}) => {
                 </div>
                 <Link className="btn text-black bg-white">View All</Link>
             </div>
-            <div className='grid lg:grid-cols-2 xl:grid-cols-3'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
                 {
-                displayPlant.map((plant, index) => <div className='w-80 bg-white p-5 rounded-2xl border' key={index}>
+                displayPlant.map((plant, index) => <div className=' bg-white p-5 rounded-2xl border shadow-xl my-2 transition-all duration-300 hover:shadow-lg' key={index}>
 
                     <img className='w-80 rounded-xl' src={plant.image} alt="" />
                     <h2 className='text-xl font-bold text-black pt-4'>{plant.plantName}</h2>
