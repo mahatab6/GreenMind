@@ -8,6 +8,7 @@ import { format } from 'date-fns';
 import CareTasks from './CareTasks';
 import { SiSimpleanalytics } from "react-icons/si";
 import { GoDotFill } from "react-icons/go";
+import PlantsSnapshot from './PlantsSnapshot';
 
 
 
@@ -41,7 +42,6 @@ const Card = () => {
     const moderate = myPlantData.filter((plant)=> plant.careLevel == "Moderate");
     const easy = myPlantData.filter((plant)=> plant.careLevel == "Easy");
     
-    console.log(myPlant)
     return (
         <div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 py-5'>
@@ -74,7 +74,9 @@ const Card = () => {
                     <CgDanger size={35} className='text-red-500' />
                 </div>
             </div>
+
             <CareTasks  myPlantData= { myPlantData}/>
+
             <div className='bg-white p-5 rounded-2xl my-5'>
                 <div className='pb-5'>
                     <h2 className='text-3xl text-black flex items-center font-bold gap-2'><SiSimpleanalytics />Plant Health Overview</h2>
@@ -114,6 +116,7 @@ const Card = () => {
                     </div>
                 </div>
             </div>
+            <PlantsSnapshot myPlantData= { myPlantData}/>
         </div>
     );
 };
