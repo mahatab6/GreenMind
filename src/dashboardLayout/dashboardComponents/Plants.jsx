@@ -4,6 +4,7 @@ import { AuthContext } from '../../context/AuthContext';
 import leaf from '../../assets/leaf.png'
 import Card from './Card';
 
+
 const Plants = () => {
     const {activeUser} = useContext(AuthContext)
     return (
@@ -14,6 +15,7 @@ const Plants = () => {
             </div>
             <p className='text-xl dark:text-black'>Here's what's happening with your plants today.</p>
             <Card/>
+            
         </div>
     );
 };
