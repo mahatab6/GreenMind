@@ -10,7 +10,7 @@ const AllPlants = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('hhttp://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data);
@@ -24,7 +24,7 @@ const AllPlants = () => {
 
     const handleSort = (field, order) => {
         setLoading(true); 
-        fetch(`http://localhost:3000/all-plants?sortBy=${field}&order=${order}`)
+        fetch(`hhttp://localhost:3000/all-plants?sortBy=${field}&order=${order}`)
             .then(res => res.json())
             .then(data => {
                 setAllPlant(data);

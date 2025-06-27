@@ -10,7 +10,7 @@ const DetailsPage = () => {
      const [loading, setLoading] = useState(true);
 
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('hhttp://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data =>{
             setAllPlant(data);

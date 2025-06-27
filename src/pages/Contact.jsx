@@ -53,15 +53,15 @@ const Contact = () => {
                         <form noValidate="" className="flex flex-col py-6 space-y-6 md:py-0 md:px-6">
                             <label className="block">
                                 <span className="mb-1">Full name</span>
-                                <input type="text" placeholder="Enter your name" className="block p-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
+                                <input type="text" placeholder="Enter your name" className="block p-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 " />
                             </label>
                             <label className="block">
                                 <span className="mb-1">Email address</span>
-                                <input type="email" placeholder="Enter your email" className="block p-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100" />
+                                <input type="email" placeholder="Enter your email" className="block p-3 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 " />
                             </label>
                             <label className="block">
                                 <span className="mb-1">Message</span>
-                                <textarea rows="3" className="block w-full rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:bg-gray-100"></textarea>
+                                <textarea rows="3" placeholder='write your comment' className="block p-2 w-full rounded-md shadow-sm focus:ring focus:ring-opacity-75 "></textarea>
                             </label>
                             <button type="button" className="self-center px-8 py-3 text-lg rounded focus:ring hover:ring focus:ring-opacity-75 bg-green-600 text-white">Submit</button>
                         </form>

@@ -14,7 +14,7 @@ const Update = () => {
     const [nextWatering, setNextWatering] = useState(null);
     
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('hhttp://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data)
@@ -48,7 +48,7 @@ const Update = () => {
         
         const updateData = {plantName,image,category,scientificName,description,careLevel,wateringFrequency, LastWateredDate,NextWateringDate, healthStatus,email,name  }
 
-        fetch(`http://localhost:3000/all-plants/${id}`,{
+        fetch(`hhttp://localhost:3000/all-plants/${id}`,{
              method: "PUT",
              headers: {
                     "Content-Type": "application/json",

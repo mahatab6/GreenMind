@@ -14,7 +14,7 @@ const MyPlant = () => {
 
   
     useEffect(()=>{
-        fetch('http://localhost:3000/all-plants')
+        fetch('hhttp://localhost:3000/all-plants')
         .then(res => res.json())
         .then(data => {
             setAllPlant(data);
@@ -38,7 +38,7 @@ const MyPlant = () => {
         }).then((result) => {
         if (result.isConfirmed) {
 
-            fetch(`http://localhost:3000/all-plants/${id}`,{
+            fetch(`hhttp://localhost:3000/all-plants/${id}`,{
              method: "DELETE",
              headers: {
                     "Content-Type": "application/json",

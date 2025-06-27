@@ -25,7 +25,7 @@ const Card = () => {
     const email = activeUser?.email ;
 
     useEffect(()=>{
-            fetch('http://localhost:3000/all-plants')
+            fetch('hhttp://localhost:3000/all-plants')
             .then(res => res.json())
             .then(data => {
                 setMyPlant(data);

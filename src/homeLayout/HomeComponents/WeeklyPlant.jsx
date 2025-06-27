@@ -24,9 +24,9 @@ const WeeklyPlant = () => {
 
                         <h4 className="font-semibold text-gray-900 mb-3">Quick Care Tips:</h4>
                         <ul>
-                            <li className='flex items-center text-xl gap-1'><FaRegLightbulb className='text-orange-300'/>Loves bright, indirect light</li>
-                            <li className='flex items-center text-xl gap-1'><FaRegLightbulb className='text-orange-300'/>Water when top inch of soil is dry</li>
-                            <li className='flex items-center text-xl gap-1'><FaRegLightbulb className='text-orange-300'/>Provide a moss pole for climbing support</li>
+                            <li className='flex items-center text-xl dark:text-black gap-1'><FaRegLightbulb className='text-orange-300'/>Loves bright, indirect light</li>
+                            <li className='flex items-center text-xl dark:text-black gap-1'><FaRegLightbulb className='text-orange-300'/>Water when top inch of soil is dry</li>
+                            <li className='flex items-center text-xl dark:text-black gap-1'><FaRegLightbulb className='text-orange-300'/>Provide a moss pole for climbing support</li>
                         </ul>
                         
                     </div>

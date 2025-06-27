@@ -1,5 +1,4 @@
 import React from 'react';
-import green from '../assets/GreenMind.png'
 import { Link } from 'react-router';
 import { FaFacebook } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
@@ -7,19 +6,17 @@ import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { CiMail } from "react-icons/ci";
 import { IoCallOutline } from "react-icons/io5";
+import Logo from '../components/Logo';
 
 
 
 
 const Footer = () => {
     return (
-        <div>
-            <footer className='bg-green-600 space-y-3 md:flex justify-around py-10 px-2'>
+        <div className='w-11/12 mx-auto'>
+            <footer className='bg-green-500 space-y-3 md:flex justify-between py-10 px-2'>
                 <div className='space-y-3'>
-                    <div className='flex items-center'>
-                        <img className='w-[50px]' src={green} alt="" />
-                        <h1 className='text-2xl font-bold'>GreenMind</h1>
-                    </div>
+                    <Logo/>
                     <p className='text-xl'>Green Mind is a smart plant management platform <br /> designed to help plant lovers easily <br /> track, care for, and organize their plant collections.</p>
                     <nav>
                         <div className="flex gap-2">
@@ -33,10 +30,7 @@ const Footer = () => {
                 <div className='space-y-3'>
                     <h1 className='text-2xl font-bold'>Useful Links</h1>
                     <ul>
-                        <li>About Company</li>
-                        <li>Meet the Team</li>
-                        <li>News & Media</li>
-                        <li>Our Projects</li>
+                        
                         <Link to="/contact">Contact us</Link>
                     </ul>
                 </div>
