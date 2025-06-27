@@ -15,8 +15,8 @@ const CareTasks = ( {myPlantData}) => {
     return (
         <div className='bg-white p-5 rounded-2xl'>
             <div className='pb-5'>
-                <h2 className='text-3xl text-black flex items-center font-bold'><MdOutlineDateRange />Today Care Tasks</h2>
-                <p className='text-black text-xl'>Plants that need attention the today's</p>
+                <h2 className='text-3xl  dark:text-black flex items-center font-bold'><MdOutlineDateRange />Today Care Tasks</h2>
+                <p className=' dark:text-black text-xl'>Plants that need attention the today's</p>
             </div>
             {
                 care.map((plant, index)=> <div key={index}>
@@ -24,11 +24,11 @@ const CareTasks = ( {myPlantData}) => {
                         <div className='flex items-center gap-2'>
                             <img className='w-14 bg-red-500 rounded-full p-2' src={drops} alt="" />
                             <div>
-                                <h2 className='text-2xl font-semibold'>{plant.plantName}</h2>
-                                <p className='text-xl'>Overdue!</p>
+                                <h2 className='text-2xl text-black font-semibold'>{plant.plantName}</h2>
+                                <p className='text-xl text-black '>Overdue!</p>
                             </div>
                         </div>
-                        <Link to={`/plants-details/${plant._id}`} className='btn  bg-white text-black'>View</Link>
+                        <Link to={`/plants-details/${plant._id}`} className='btn  bg-white  dark:text-black'>View</Link>
                     </div>
                 </div>)
             }
@@ -38,11 +38,11 @@ const CareTasks = ( {myPlantData}) => {
                         <div className='flex items-center gap-2'>
                             <img className='w-14 bg-green-500  rounded-full p-2' src={drops} alt="" />
                             <div>
-                                <h2 className='text-2xl font-semibold'>{plant.plantName}</h2>
-                                <p className='text-xl'>water need!</p>
+                                <h2 className='text-2xl text-black  font-semibold'>{plant.plantName}</h2>
+                                <p className='text-xl text-black '>water need!</p>
                             </div>
                         </div>
-                        <Link to={`/plants-details/${plant._id}`} className='btn bg-white text-black'>View</Link>
+                        <Link to={`/plants-details/${plant._id}`} className='btn bg-white  dark:text-black'>View</Link>
                     </div>
                 </div>)
             }
