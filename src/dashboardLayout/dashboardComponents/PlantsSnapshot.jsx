@@ -13,7 +13,7 @@ const PlantsSnapshot = ({myPlantData}) => {
                     <h2 className='text-3xl text-black flex items-center font-bold gap-2'><PiPlantFill className='text-green-500'/>My Plants Snapshot</h2>
                     <p className='text-black text-xl'>Your most recent plants</p>
                 </div>
-                <Link className="btn text-black bg-white">View All</Link>
+                <Link to="/my-plants" className="btn text-black bg-white">View All</Link>
             </div>
             <div className='grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4'>
                 {

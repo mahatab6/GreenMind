@@ -37,6 +37,7 @@ const Dashboard = () => {
                 <Logo/>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/add-plant'>Add New Plant</Link></li>
+                <li><Link to='/all-plants'>All Plants</Link></li>
                 <li><Link to='/my-plants'>My Plants</Link></li>
                 
                 </ul>

@@ -78,7 +78,7 @@ const Card = () => {
             </div>
 
             <div className='grid grid-cols-1 lg:grid-cols-9 gap-4 '>
-                <div className='lg:col-span-7 border'>
+                <div className='lg:col-span-7 '>
                     <CareTasks  myPlantData= { myPlantData}/>
 
                     <div className='bg-white p-5 rounded-2xl my-5'>
